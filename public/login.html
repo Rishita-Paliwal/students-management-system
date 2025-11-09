@@ -38,7 +38,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   const msg = document.getElementById('msg');
 
   if (response.ok) {
-    msg.textContent = "✅ Login successful!";
+    msg.textContent = "Login successful!";
     msg.style.color = "green";
     window.location.href = "/dashboard.html";
   } else {
