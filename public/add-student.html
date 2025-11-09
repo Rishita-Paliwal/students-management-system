@@ -48,7 +48,7 @@ document.getElementById("studentForm").addEventListener("submit", async (e) => {
   const msg = document.getElementById('msg');
 
   if (response.ok) {
-    msg.textContent = "✅ Student Added Successfully!";
+    msg.textContent = "Student Added Successfully!";
     msg.style.color = "green";
     e.target.reset();
   } else {
