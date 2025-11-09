@@ -4,8 +4,6 @@ const pool = require('../db');
 
 const router = express.Router();
 
-
-
 // Login route
 router.post('/login', async (req, res) => {
   console.log("LOGIN REQUEST BODY:", req.body);
@@ -24,11 +22,9 @@ router.post('/login', async (req, res) => {
   console.log("Stored Hash:", user.password_hash);
   console.log("Hash length:", user.password_hash.length);
 
-  // ✅ Correct bcryptjs comparison (this was the fix)
   let match = bcrypt.compareSync(password, user.password_hash);
   console.log("Compare result:", match);
 
- 
 
   if (!match) {
     return res.status(400).json({ error: 'Invalid username or password' });
